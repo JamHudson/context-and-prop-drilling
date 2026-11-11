@@ -8,7 +8,7 @@ function navClass({ isActive }) {
   return isActive ? "nav-link nav-on" : "nav-link";
 }
 
-function Header({ cityId, onCityChange }) {
+function Header() {
   return (
     <header className="header">
       <div className="header-top">
@@ -25,7 +25,7 @@ function Header({ cityId, onCityChange }) {
           </NavLink>
         </nav>
         <div className="header-controls">
-          <CityPicker cityId={cityId} onCityChange={onCityChange} />
+          <CityPicker />
           <UnitsToggle />
         </div>
       </div>

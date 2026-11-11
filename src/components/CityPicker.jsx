@@ -1,10 +1,16 @@
-import forecasts from "../data/forecasts.json";
+import { useContext } from "react";
 
-function CityPicker({ cityId, onCityChange }) {
+import forecasts from "../data/forecasts.json";
+import { CityContext } from "../context/CityContext.jsx";
+
+
+function CityPicker() {
+  const { city, setCityId } = useContext( CityContext ); 
+
   return (
     <label className="city-picker">
       City
-      <select value={cityId} onChange={(e) => onCityChange(e.target.value)}>
+      <select value={city.id} onChange={(e) => setCityId(e.target.value)}>
         {forecasts.map((forecast) => (
           <option key={forecast.id} value={forecast.id}>
             {forecast.name}
