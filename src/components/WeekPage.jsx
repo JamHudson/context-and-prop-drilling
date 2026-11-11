@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import DayCard from "./DayCard.jsx";
-import { CityContext } from "../context/CityContext.jsx";
+import { useCity } from "../context/CityContext.jsx";
 
 function WeekPage() {
-  const { city } = useContext( CityContext );
+  const { city } = useCity();
 
   return (
     <section className="page">

@@ -1,11 +1,9 @@
-import { useContext } from "react";
-
 import forecasts from "../data/forecasts.json";
-import { CityContext } from "../context/CityContext.jsx";
+import { useCity } from "../context/CityContext.jsx";
 
 
 function CityPicker() {
-  const { city, setCityId } = useContext( CityContext ); 
+  const { city, setCityId } = useCity(); 
 
   return (
     <label className="city-picker">

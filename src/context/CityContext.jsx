@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { createContext, useState } from 'react';
 
 import forecasts from "../data/forecasts.json"
@@ -13,4 +14,14 @@ export function CityProvider({ children }) {
             {children}
         </CityContext>
     )
+}
+
+export function useCity() {
+    const value = useContext( CityContext );
+
+    if (value === null) {
+        throw new Error("useCity must be used inside a CityProvider");
+    }
+
+    return value;
 }

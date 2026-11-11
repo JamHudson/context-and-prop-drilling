@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import CurrentConditions from "./CurrentConditions.jsx";
 import HourlyStrip from "./HourlyStrip.jsx";
-import { CityContext } from "../context/CityContext.jsx";
+import { useCity } from "../context/CityContext.jsx";
 
 function TodayPage() {
-  const { city } = useContext( CityContext );
+  const { city } = useCity();
 
   return (
     <section className="page">
